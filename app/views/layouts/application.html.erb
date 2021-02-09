@@ -5,14 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "tailwind" %>
-    <%= stylesheet_link_tag "inter-font" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
+    <header class="w-full bg-blue-600 p-2 shadow-md">
+      <h1 class="text-2xl font-sans text-white tracking-wide">
+        Rails Task App
+      </h1>
+    </header>
     <%= yield %>
   </body>
 </html>
