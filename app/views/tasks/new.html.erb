@@ -1,2 +1,16 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>タスクの新規登録</h1>
+<nav>
+  <%= link_to "一覧", tasks_path, class:"" %>
+</nav>
+
+<%= form_with model: @task, local: true do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"", id: "task_name"%>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows:5, class:"", id:"task_description" %>
+    <%= f.submit nil, class:"border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 mb-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline inline-block" %>
+  </div>
+<% end %>
