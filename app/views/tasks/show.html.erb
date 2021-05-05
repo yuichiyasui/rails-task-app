@@ -1,2 +1,59 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1 class="text-xl font-bold mb-2">タスクの詳細</h1>
+<nav class="mb-4">
+    <ol class="flex">
+        <li class="breadcrumb-1"><%= link_to 'タスク一覧', tasks_path, class: "text-blue-400 hover:text-blue-600" %></li>
+        <li>タスク詳細</li>
+    </ol>
+</nav>
+
+<style>
+    .breadcrumb-1:after {
+        content: '>';
+        padding: 0 10px;
+    }
+</style>
+
+<table class="table-auto w-full">
+    <tbody class=" text-left border border-indigo-100">
+        <tr class="odd:bg-indigo-100">
+            <th class="py-3 px-4 font-bold">
+                <%= Task.human_attribute_name(:id) %>
+            </th>
+            <td class="py-3 px-4">
+                <%= @task.id %>
+            </td>
+        </tr>
+        <tr class="odd:bg-indigo-100">
+            <th class="py-3 px-4 font-bold">
+                <%= Task.human_attribute_name(:name) %>
+            </th>
+            <td class="py-3 px-4">
+                <%= @task.name %>
+            </td>
+        </tr>
+        <tr class="odd:bg-indigo-100">
+            <th class="py-3 px-4 font-bold">
+                <%= Task.human_attribute_name(:description) %>
+            </th>
+            <td class="py-3 px-4">
+                <%= @task.description %>
+            </td>
+        </tr>
+        <tr class="odd:bg-indigo-100">
+            <th class="py-3 px-4 font-bold">
+                <%= Task.human_attribute_name(:created_at) %>
+            </th>
+            <td class="py-3 px-4">
+                <%= @task.created_at %>
+            </td>
+        </tr>
+        <tr class="odd:bg-indigo-100">
+            <th class="py-3 px-4 font-bold">
+                <%= Task.human_attribute_name(:updated_at) %>
+            </th>
+            <td class="py-3 px-4">
+                <%= @task.updated_at %>
+            </td>
+        </tr>
+    </tbody>
+</table>
